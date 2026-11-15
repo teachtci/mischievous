@@ -18,7 +18,7 @@
         }
     </style>
     <script>
-        // Automatic about:blank cloaking on any letter key press or mouse click (left/right)
+        // Automatic about:blank cloaking on any letter key press or mouse click (left/right)[cite: 1]
         (function() {
             if (window.location.protocol !== 'about:' && !window.frameElement && !sessionStorage.getItem('is_cloaked')) {
                 const launchCloak = function(e) {
@@ -227,7 +227,10 @@
     <div id="toast-container" class="fixed bottom-5 right-5 flex flex-col gap-2 z-50"></div>
 
     <script>
-        // Escape key fast triple press panic redirect listener
+        // Change this URL to whatever link you want the DecimalHero button to load into the search bar!
+        const DECIMALHERO_URL = "https://teachtci.github.io";
+
+        // Escape key fast triple press panic redirect listener[cite: 1]
         let escapePressCount = 0;
         let escapeTimer = null;
         window.addEventListener('keydown', (e) => {
@@ -236,7 +239,7 @@
                 if (escapePressCount === 1) {
                     escapeTimer = setTimeout(() => {
                         escapePressCount = 0;
-                    }, 800); // 800ms window to press escape 3 times
+                    }, 800); // 800ms window to press escape 3 times[cite: 1]
                 } else if (escapePressCount === 3) {
                     clearTimeout(escapeTimer);
                     window.location.replace("https://launchpad.classlink.com/login");
@@ -340,7 +343,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            // Interactive Calendar Modal Logic
+            // Interactive Calendar Modal Logic[cite: 1]
             let calYear = new Date().getFullYear();
             let calMonth = new Date().getMonth();
 
@@ -363,13 +366,13 @@
 
                 calGrid.innerHTML = "";
 
-                // Blank spaces for previous month offset
+                // Blank spaces for previous month offset[cite: 1]
                 for (let i = 0; i < firstDay; i++) {
                     const emptyCell = document.createElement('div');
                     calGrid.appendChild(emptyCell);
                 }
 
-                // Days of the month
+                // Days of the month[cite: 1]
                 for (let day = 1; day <= daysInMonth; day++) {
                     const dayCell = document.createElement('div');
                     dayCell.textContent = day;
@@ -432,7 +435,7 @@
                 });
             }
 
-            // Font Cycling Button Logic
+            // Font Cycling Button Logic[cite: 1]
             const fonts = [
                 { name: 'Lexend', val: "'Lexend', sans-serif" },
                 { name: 'Standard Sans', val: "ui-sans-serif, system-ui, sans-serif" },
@@ -450,7 +453,7 @@
                 });
             }
 
-            // Stopwatch Logic
+            // Stopwatch Logic[cite: 1]
             let swInterval = null;
             let swSeconds = 0;
             let swRunning = false;
@@ -522,7 +525,7 @@
                 });
             }
 
-            // Quick Notes Auto-save Logic
+            // Quick Notes Auto-save Logic[cite: 1]
             const notesModal = document.getElementById('notes-modal');
             const quickNotesArea = document.getElementById('quick-notes-area');
             
@@ -677,10 +680,9 @@
             if (decimalHeroBtn) {
                 decimalHeroBtn.addEventListener('click', () => {
                     let urlInput = document.getElementById("url-target");
-                    if (urlInput && urlInput.value.trim()) {
-                        triggerEmbedder();
-                    } else {
-                        showToast("DecimalHero", "Please enter a URL or use Create Page.");
+                    if (urlInput) {
+                        urlInput.value = DECIMALHERO_URL;
+                        showToast("DecimalHero", "Link loaded into the search bar.");
                     }
                 });
             }
