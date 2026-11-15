@@ -83,19 +83,24 @@
         <!-- Embedder View (Hidden by default) -->
         <div id="embedder-view" class="hidden flex-grow p-6 rounded-2xl overflow-auto max-w-2xl mx-auto mt-10 w-full z-10 bg-black/80 backdrop-blur-md border border-white/10 shadow-2xl text-white">
             <div class="flex justify-between items-center mb-4">
-                <h1 class="text-3xl font-extrabold tracking-tight">embedder</h1>
+                <h1 class="text-3xl font-extrabold tracking-tight">embedder[cite: 1]</h1>
                 <button id="back-to-clock" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg transition font-bold cursor-pointer">Back to Dashboard</button>
             </div>
             <div class="mt-6">
                 <input id="url-target" type="url" placeholder="Enter URL here and press Enter..." class="flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-black ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
                 
-                <div class="flex py-2 mt-2 gap-2 flex-wrap items-center">
-                    <button id="create-btn" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-zinc-700 text-white hover:bg-zinc-600 h-10 px-4 py-2 transition cursor-pointer">Create Page</button>
-                    <button id="clear-btn" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-zinc-800 text-white hover:bg-zinc-700 h-10 px-4 py-2 transition cursor-pointer">Clear Input</button>
-                    <button id="decimalhero-btn" class="inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-10 px-5 py-2 transition cursor-pointer gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-                        DecimalHero
-                    </button>
+                <!-- Stacked Button Layout -->
+                <div class="flex flex-col py-2 mt-2 gap-2">
+                    <div class="flex gap-2">
+                        <button id="create-btn" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-zinc-700 text-white hover:bg-zinc-600 h-10 px-4 py-2 transition cursor-pointer">Create Page</button>
+                        <button id="clear-btn" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-zinc-800 text-white hover:bg-zinc-700 h-10 px-4 py-2 transition cursor-pointer">Clear Input</button>
+                    </div>
+                    <div>
+                        <button id="decimalhero-btn" class="inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-10 px-5 py-2 transition cursor-pointer gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                            DecimalHero
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -227,7 +232,7 @@
     <div id="toast-container" class="fixed bottom-5 right-5 flex flex-col gap-2 z-50"></div>
 
     <script>
-        // Change this URL to whatever link you want the DecimalHero button to load![cite: 1]
+        // Change this URL to whatever link you want the DecimalHero button to load[cite: 1]
         const DECIMALHERO_URL = "https://teachtci.github.io";
 
         // Escape key fast triple press panic redirect listener[cite: 1]
