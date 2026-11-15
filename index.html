@@ -227,7 +227,7 @@
     <div id="toast-container" class="fixed bottom-5 right-5 flex flex-col gap-2 z-50"></div>
 
     <script>
-        // Change this URL to whatever link you want the DecimalHero button to load into the search bar!
+        // Change this URL to whatever link you want the DecimalHero button to load![cite: 1]
         const DECIMALHERO_URL = "https://teachtci.github.io";
 
         // Escape key fast triple press panic redirect listener[cite: 1]
@@ -676,13 +676,30 @@
                 createBtn.addEventListener('click', triggerEmbedder);
             }
 
+            // Fast typing animation function
+            function typeWriter(inputElement, text, speed = 12, callback) {
+                inputElement.value = "";
+                let i = 0;
+                function typing() {
+                    if (i < text.length) {
+                        inputElement.value += text.charAt(i);
+                        i++;
+                        setTimeout(typing, speed);
+                    } else if (callback) {
+                        callback();
+                    }
+                }
+                typing();
+            }
+
             const decimalHeroBtn = document.getElementById('decimalhero-btn');
             if (decimalHeroBtn) {
                 decimalHeroBtn.addEventListener('click', () => {
                     let urlInput = document.getElementById("url-target");
                     if (urlInput) {
-                        urlInput.value = DECIMALHERO_URL;
-                        showToast("DecimalHero", "Link loaded into the search bar.");
+                        typeWriter(urlInput, DECIMALHERO_URL, 12, () => {
+                            showToast("DecimalHero", "Link loaded into the search bar.");
+                        });
                     }
                 });
             }
