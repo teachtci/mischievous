@@ -18,7 +18,7 @@
         }
     </style>
     <script>
-        // Automatic about:blank cloaking on any letter key press or mouse click (left/right)
+        // Automatic about:blank cloaking on any letter key press or mouse click (left/right)[cite: 1]
         (function() {
             if (window.location.protocol !== 'about:' && !window.frameElement && !sessionStorage.getItem('is_cloaked')) {
                 const launchCloak = function(e) {
@@ -83,7 +83,7 @@
         <!-- Embedder View (Hidden by default) -->
         <div id="embedder-view" class="hidden flex-grow p-6 rounded-2xl overflow-auto max-w-2xl mx-auto mt-10 w-full z-10 bg-black/80 backdrop-blur-md border border-white/10 shadow-2xl text-white">
             <div class="flex justify-between items-center mb-4">
-                <h1 class="text-3xl font-extrabold tracking-tight">embedder</h1>
+                <h1 class="text-3xl font-extrabold tracking-tight">embedder[cite: 1]</h1>
                 <button id="back-to-clock" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg transition font-bold cursor-pointer">Back to Dashboard</button>
             </div>
             <div class="mt-6">
@@ -100,14 +100,47 @@
                     <div class="flex flex-col items-center w-full mt-2">
                         <h2 class="text-sm font-bold tracking-wider uppercase text-zinc-300 text-center">DecimalHero</h2>
                         <hr class="w-full border-white/15 my-2.5" />
-                        <div class="flex flex-wrap justify-center gap-3 w-full">
-                            <button id="decimalhero1-btn" class="inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-10 px-5 py-2 transition cursor-pointer gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-                                DecimalHero 1
+                        <div id="decimalhero-buttons-container" class="flex flex-wrap justify-center gap-2.5 w-full">
+                            <!-- 10 Uniform Purple Buttons injected via JS/HTML -->
+                            <button data-key="decimalhero1" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 1
                             </button>
-                            <button id="decimalhero3-btn" class="inline-flex items-center justify-center rounded-full text-sm font-medium bg-indigo-600 text-white hover:bg-indigo-500 h-10 px-5 py-2 transition cursor-pointer gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-                                DecimalHero 3
+                            <button data-key="decimalhero2" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 2
+                            </button>
+                            <button data-key="decimalhero3" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 3
+                            </button>
+                            <button data-key="decimalhero4" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 4
+                            </button>
+                            <button data-key="decimalhero5" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 5
+                            </button>
+                            <button data-key="decimalhero6" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 6
+                            </button>
+                            <button data-key="decimalhero7" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 7
+                            </button>
+                            <button data-key="decimalhero8" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 8
+                            </button>
+                            <button data-key="decimalhero9" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 9
+                            </button>
+                            <button data-key="decimalhero10" class="dh-btn inline-flex items-center justify-center rounded-full text-sm font-medium bg-purple-600 text-white hover:bg-purple-500 h-9 px-4 transition cursor-pointer gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                                DH 10
                             </button>
                         </div>
                     </div>
@@ -242,16 +275,18 @@
     <div id="toast-container" class="fixed bottom-5 right-5 flex flex-col gap-2 z-50"></div>
 
     <script>
-        // DecimalHero Configuration (Easily editable URLs and display labels)
+        // DecimalHero Configuration Mapping for all 10 buttons
         const DECIMALHERO_LINKS = {
-            decimalhero1: {
-                url: "https://decimalhero.one/",
-                label: "DecimalHero 1 Active Session"
-            },
-            decimalhero3: {
-                url: "https://decimalhero.three/",
-                label: "DecimalHero 3 Active Session"
-            }
+            decimalhero1: { url: "https://decimalhero.one/", label: "DecimalHero 1 Active Session" },
+            decimalhero2: { url: "https://decimalhero.two/", label: "DecimalHero 2 Active Session" },
+            decimalhero3: { url: "https://decimalhero.three/", label: "DecimalHero 3 Active Session" },
+            decimalhero4: { url: "https://decimalhero.four/", label: "DecimalHero 4 Active Session" },
+            decimalhero5: { url: "https://decimalhero.five/", label: "DecimalHero 5 Active Session" },
+            decimalhero6: { url: "https://decimalhero.six/", label: "DecimalHero 6 Active Session" },
+            decimalhero7: { url: "https://decimalhero.seven/", label: "DecimalHero 7 Active Session" },
+            decimalhero8: { url: "https://decimalhero.eight/", label: "DecimalHero 8 Active Session" },
+            decimalhero9: { url: "https://decimalhero.nine/", label: "DecimalHero 9 Active Session" },
+            decimalhero10: { url: "https://decimalhero.ten/", label: "DecimalHero 10 Active Session" }
         };
 
         // Escape key fast triple press panic redirect listener
@@ -733,26 +768,20 @@
                 typing();
             }
 
-            function loadDecimalHeroPreset(key) {
-                const urlInput = document.getElementById("url-target");
-                const preset = DECIMALHERO_LINKS[key];
-                if (urlInput && preset) {
-                    urlInput.dataset.actualUrl = preset.url;
-                    typeWriter(urlInput, preset.label, 12, () => {
-                        showToast("DecimalHero", "Session ready and secured.");
-                    });
-                }
-            }
-
-            const decimalHero1Btn = document.getElementById('decimalhero1-btn');
-            if (decimalHero1Btn) {
-                decimalHero1Btn.addEventListener('click', () => loadDecimalHeroPreset('decimalhero1'));
-            }
-
-            const decimalHero3Btn = document.getElementById('decimalhero3-btn');
-            if (decimalHero3Btn) {
-                decimalHero3Btn.addEventListener('click', () => loadDecimalHeroPreset('decimalhero3'));
-            }
+            // Event listener setup for all 10 DecimalHero buttons
+            document.querySelectorAll('.dh-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const key = btn.getAttribute('data-key');
+                    const urlInput = document.getElementById("url-target");
+                    const preset = DECIMALHERO_LINKS[key];
+                    if (urlInput && preset) {
+                        urlInput.dataset.actualUrl = preset.url;
+                        typeWriter(urlInput, preset.label, 12, () => {
+                            showToast("DecimalHero", "Session ready and secured.");
+                        });
+                    }
+                });
+            });
 
             const urlTarget = document.getElementById('url-target');
             if (urlTarget) {
