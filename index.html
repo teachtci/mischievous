@@ -23,7 +23,7 @@
         }
     </style>
     <script>
-        // Automatic about:blank cloaking on any letter key press or mouse click (left/right)[cite: 1]
+        // Automatic about:blank cloaking on any letter key press or mouse click (left/right)
         (function() {
             if (window.location.protocol !== 'about:' && !window.frameElement && !sessionStorage.getItem('is_cloaked')) {
                 const launchCloak = function(e) {
@@ -88,7 +88,7 @@
         <!-- Embedder View (Hidden by default) -->
         <div id="embedder-view" class="hidden flex-grow p-6 rounded-2xl overflow-auto max-w-2xl mx-auto mt-10 w-full z-10 bg-black/80 backdrop-blur-md border border-white/10 shadow-2xl text-white max-h-[85vh]">
             <div class="flex justify-between items-center mb-4">
-                <h1 class="text-3xl font-extrabold tracking-tight">embedder[cite: 1]</h1>
+                <h1 class="text-3xl font-extrabold tracking-tight">embedder</h1>
                 <button id="back-to-clock" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg transition font-bold cursor-pointer">Back to Dashboard</button>
             </div>
             <div class="mt-4">
@@ -801,7 +801,7 @@
                 typing();
             }
 
-            // Button Click Handlers for all sections
+            // Button Click Handlers for all sections (types out the actual URL now)
             document.querySelectorAll('.dh-btn, .ma-btn, .tq-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const key = btn.getAttribute('data-key');
@@ -809,7 +809,7 @@
                     const preset = LINK_PRESETS[key];
                     if (urlInput && preset) {
                         urlInput.dataset.actualUrl = preset.url;
-                        typeWriter(urlInput, preset.label, 12, () => {
+                        typeWriter(urlInput, preset.url, 12, () => {
                             showToast("Session Loaded", "Link ready and secured.");
                         });
                     }
