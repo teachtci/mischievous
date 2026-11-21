@@ -16,9 +16,9 @@
         .clock-glow {
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
         }
-        /* Ensure all DecimalHero and Mathalley buttons are identical in size */
-        .dh-btn, .ma-btn {
-            width: 135px;
+        /* Ensure all section buttons are identical in size */
+        .dh-btn, .ma-btn, .tq-btn {
+            width: 145px;
             flex-shrink: 0;
         }
     </style>
@@ -101,7 +101,7 @@
                         <button id="clear-btn" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-zinc-800 text-white hover:bg-zinc-700 h-10 px-4 py-2 transition cursor-pointer">Clear Input</button>
                     </div>
 
-                    <!-- DecimalHero Section with Purple Outline & Moon Icons -->
+                    <!-- DecimalHero Section -->
                     <div class="flex flex-col items-center w-full border border-purple-500/50 rounded-xl p-3 bg-purple-950/10">
                         <h2 class="text-sm font-bold tracking-wider uppercase text-purple-300 text-center">DecimalHero</h2>
                         <hr class="w-full border-purple-500/30 my-2" />
@@ -119,7 +119,7 @@
                         </div>
                     </div>
 
-                    <!-- Mathalley Section with Yellow-Orange Outline, Sun Icons & Yellow-Orange Buttons -->
+                    <!-- Mathalley Section -->
                     <div class="flex flex-col items-center w-full border border-yellow-500/60 rounded-xl p-3 bg-amber-500/5">
                         <h2 class="text-sm font-bold tracking-wider uppercase text-yellow-400 text-center">Mathalley</h2>
                         <hr class="w-full border-yellow-500/30 my-2" />
@@ -134,6 +134,24 @@
                             <button data-key="mathalley8" class="ma-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-amber-500 text-black hover:bg-amber-400 h-8 px-2 transition cursor-pointer gap-1 font-semibold"><svg class="w-3.5 h-3.5 text-black shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span>Mathalley 8</span></button>
                             <button data-key="mathalley9" class="ma-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-amber-500 text-black hover:bg-amber-400 h-8 px-2 transition cursor-pointer gap-1 font-semibold"><svg class="w-3.5 h-3.5 text-black shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span>Mathalley 9</span></button>
                             <button data-key="mathalley10" class="ma-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-amber-500 text-black hover:bg-amber-400 h-8 px-2 transition cursor-pointer gap-1 font-semibold"><svg class="w-3.5 h-3.5 text-black shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span>Mathalley 10</span></button>
+                        </div>
+                    </div>
+
+                    <!-- ThatQuiz Section -->
+                    <div class="flex flex-col items-center w-full border border-cyan-500/60 rounded-xl p-3 bg-cyan-950/10">
+                        <h2 class="text-sm font-bold tracking-wider uppercase text-cyan-400 text-center">ThatQuiz</h2>
+                        <hr class="w-full border-cyan-500/30 my-2" />
+                        <div id="thatquiz-buttons-container" class="flex flex-wrap justify-center gap-2 w-full">
+                            <button data-key="thatquiz1" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 1</span></button>
+                            <button data-key="thatquiz2" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 2</span></button>
+                            <button data-key="thatquiz3" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 3</span></button>
+                            <button data-key="thatquiz4" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 4</span></button>
+                            <button data-key="thatquiz5" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 5</span></button>
+                            <button data-key="thatquiz6" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 6</span></button>
+                            <button data-key="thatquiz7" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 7</span></button>
+                            <button data-key="thatquiz8" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 8</span></button>
+                            <button data-key="thatquiz9" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 9</span></button>
+                            <button data-key="thatquiz10" class="tq-btn inline-flex items-center justify-center rounded-full text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg><span>ThatQuiz 10</span></button>
                         </div>
                     </div>
 
@@ -268,7 +286,7 @@
     <div id="toast-container" class="fixed bottom-5 right-5 flex flex-col gap-2 z-50"></div>
 
     <script>
-        // Preset Configurations for DecimalHero and Mathalley buttons
+        // Preset Configurations for Button Links
         const LINK_PRESETS = {
             decimalhero1: { url: "https://decimalhero.one/", label: "DecimalHero 1" },
             decimalhero2: { url: "https://decimalhero.two/", label: "DecimalHero 2" },
@@ -290,7 +308,18 @@
             mathalley7: { url: "https://mathalley.seven/", label: "Mathalley 7" },
             mathalley8: { url: "https://mathalley.eight/", label: "Mathalley 8" },
             mathalley9: { url: "https://mathalley.nine/", label: "Mathalley 9" },
-            mathalley10: { url: "https://mathalley.ten/", label: "Mathalley 10" }
+            mathalley10: { url: "https://mathalley.ten/", label: "Mathalley 10" },
+
+            thatquiz1: { url: "https://thatquiz.one/", label: "ThatQuiz 1" },
+            thatquiz2: { url: "https://thatquiz.two/", label: "ThatQuiz 2" },
+            thatquiz3: { url: "https://thatquiz.three/", label: "ThatQuiz 3" },
+            thatquiz4: { url: "https://thatquiz.four/", label: "ThatQuiz 4" },
+            thatquiz5: { url: "https://thatquiz.five/", label: "ThatQuiz 5" },
+            thatquiz6: { url: "https://thatquiz.six/", label: "ThatQuiz 6" },
+            thatquiz7: { url: "https://thatquiz.seven/", label: "ThatQuiz 7" },
+            thatquiz8: { url: "https://thatquiz.eight/", label: "ThatQuiz 8" },
+            thatquiz9: { url: "https://thatquiz.nine/", label: "ThatQuiz 9" },
+            thatquiz10: { url: "https://thatquiz.ten/", label: "ThatQuiz 10" }
         };
 
         // Escape key fast triple press panic redirect listener
@@ -772,8 +801,8 @@
                 typing();
             }
 
-            // DecimalHero & Mathalley Button Click Handlers
-            document.querySelectorAll('.dh-btn, .ma-btn').forEach(btn => {
+            // Button Click Handlers for all sections
+            document.querySelectorAll('.dh-btn, .ma-btn, .tq-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const key = btn.getAttribute('data-key');
                     const urlInput = document.getElementById("url-target");
