@@ -16,8 +16,8 @@
         .clock-glow {
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
         }
-        /* Ensure all section buttons are identical in size and have smooth rounded-xl corners matching your reference */
-        .dh-btn, .ma-btn, .tq-btn {
+        /* Ensure all section buttons are identical in size and have smooth rounded-xl corners */
+        .dh-btn, .ma-btn, .tq-btn, .mg-btn {
             width: 145px;
             flex-shrink: 0;
             border-radius: 0.75rem !important; /* rounded-xl */
@@ -89,7 +89,7 @@
         <!-- Embedder View (Hidden by default) -->
         <div id="embedder-view" class="hidden flex-grow p-6 rounded-2xl overflow-auto max-w-2xl mx-auto mt-10 w-full z-10 bg-black/80 backdrop-blur-md border border-white/10 shadow-2xl text-white max-h-[85vh]">
             <div class="flex justify-between items-center mb-4">
-                <h1 class="text-3xl font-extrabold tracking-tight">embedder</h1>
+                <h1 class="text-3xl font-extrabold tracking-tight">embedder[cite: 1]</h1>
                 <button id="back-to-clock" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg transition font-bold cursor-pointer">Back to Dashboard</button>
             </div>
             <div class="mt-4">
@@ -138,7 +138,7 @@
                         </div>
                     </div>
 
-                    <!-- ThatQuiz Section with Aurora Pink Outline, Gemini Icons & Aurora Pink Buttons -->
+                    <!-- ThatQuiz Section -->
                     <div class="flex flex-col items-center w-full border border-pink-500/60 rounded-xl p-3 bg-pink-950/10">
                         <h2 class="text-sm font-bold tracking-wider uppercase text-pink-400 text-center">ThatQuiz</h2>
                         <hr class="w-full border-pink-500/30 my-2" />
@@ -153,6 +153,24 @@
                             <button data-key="thatquiz8" class="tq-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-pink-600 text-white hover:bg-pink-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(236,72,153,0.3)]"><svg class="w-3.5 h-3.5 text-pink-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg><span>ThatQuiz 8</span></button>
                             <button data-key="thatquiz9" class="tq-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-pink-600 text-white hover:bg-pink-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(236,72,153,0.3)]"><svg class="w-3.5 h-3.5 text-pink-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg><span>ThatQuiz 9</span></button>
                             <button data-key="thatquiz10" class="tq-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-pink-600 text-white hover:bg-pink-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(236,72,153,0.3)]"><svg class="w-3.5 h-3.5 text-pink-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg><span>ThatQuiz 10</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Mathigon Section -->
+                    <div class="flex flex-col items-center w-full border border-teal-500/60 rounded-xl p-3 bg-teal-950/10">
+                        <h2 class="text-sm font-bold tracking-wider uppercase text-teal-400 text-center">Mathigon</h2>
+                        <hr class="w-full border-teal-500/30 my-2" />
+                        <div id="mathigon-buttons-container" class="flex flex-wrap justify-center gap-2 w-full">
+                            <button data-key="mathigon1" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 1</span></button>
+                            <button data-key="mathigon2" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 2</span></button>
+                            <button data-key="mathigon3" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 3</span></button>
+                            <button data-key="mathigon4" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 4</span></button>
+                            <button data-key="mathigon5" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 5</span></button>
+                            <button data-key="mathigon6" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 6</span></button>
+                            <button data-key="mathigon7" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 7</span></button>
+                            <button data-key="mathigon8" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 8</span></button>
+                            <button data-key="mathigon9" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 9</span></button>
+                            <button data-key="mathigon10" class="mg-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-teal-600 text-white hover:bg-teal-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(20,184,166,0.3)]"><svg class="w-3.5 h-3.5 text-teal-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg><span>Mathigon 10</span></button>
                         </div>
                     </div>
 
@@ -320,7 +338,18 @@
             thatquiz7: { url: "https://thatquiz.seven/", label: "ThatQuiz 7" },
             thatquiz8: { url: "https://thatquiz.eight/", label: "ThatQuiz 8" },
             thatquiz9: { url: "https://thatquiz.nine/", label: "ThatQuiz 9" },
-            thatquiz10: { url: "https://thatquiz.ten/", label: "ThatQuiz 10" }
+            thatquiz10: { url: "https://thatquiz.ten/", label: "ThatQuiz 10" },
+
+            mathigon1: { url: "https://mathigon.one/", label: "Mathigon 1" },
+            mathigon2: { url: "https://mathigon.two/", label: "Mathigon 2" },
+            mathigon3: { url: "https://mathigon.three/", label: "Mathigon 3" },
+            mathigon4: { url: "https://mathigon.four/", label: "Mathigon 4" },
+            mathigon5: { url: "https://mathigon.five/", label: "Mathigon 5" },
+            mathigon6: { url: "https://mathigon.six/", label: "Mathigon 6" },
+            mathigon7: { url: "https://mathigon.seven/", label: "Mathigon 7" },
+            mathigon8: { url: "https://mathigon.eight/", label: "Mathigon 8" },
+            mathigon9: { url: "https://mathigon.nine/", label: "Mathigon 9" },
+            mathigon10: { url: "https://mathigon.ten/", label: "Mathigon 10" }
         };
 
         // Escape key fast triple press panic redirect listener
@@ -803,7 +832,7 @@
             }
 
             // Button Click Handlers for all sections (types out the actual URL)
-            document.querySelectorAll('.dh-btn, .ma-btn, .tq-btn').forEach(btn => {
+            document.querySelectorAll('.dh-btn, .ma-btn, .tq-btn, .mg-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const key = btn.getAttribute('data-key');
                     const urlInput = document.getElementById("url-target");
