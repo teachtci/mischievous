@@ -17,7 +17,7 @@
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
         }
         /* Ensure all section buttons are identical in size and have smooth rounded-xl corners */
-        .dh-btn, .ma-btn, .tq-btn, .mg-btn, .pp-btn, .tm-btn, .wz-btn {
+        .dh-btn, .ma-btn, .tq-btn, .mg-btn, .pp-btn, .tm-btn, .wz-btn, .sw-btn, .ef-btn, .dt-btn, .sl-btn, .gm-btn {
             width: 145px;
             flex-shrink: 0;
             border-radius: 0.75rem !important; /* rounded-xl */
@@ -127,7 +127,7 @@
                     <!-- Draggable Sections Container -->
                     <div id="sections-container" class="flex flex-col gap-4 w-full">
 
-                        <!-- DecimalHero Section (Moved to Top) -->
+                        <!-- DecimalHero Section -->
                         <div draggable="true" data-section-id="decimalhero" data-section-title="DecimalHero" class="draggable-section flex flex-col items-center w-full border border-purple-500/50 rounded-xl p-3 bg-purple-950/10">
                             <div class="flex justify-between items-center w-full cursor-pointer section-toggle" data-target="decimalhero-content">
                                 <div class="flex items-center gap-2">
@@ -337,880 +337,89 @@
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Floating Control Panel -->
-    <div class="absolute right-5 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 bg-black/40 backdrop-blur-md p-2 rounded-xl border border-white/10 shadow-lg">
-        <button id="btn-font" title="Cycle Font & Text Color" class="w-10 h-10 flex items-center justify-center bg-zinc-800/80 hover:bg-zinc-700 rounded-lg transition text-white font-bold text-sm cursor-pointer">
-            Aa
-        </button>
-        <button id="btn-notes" title="Quick Notes" class="w-10 h-10 flex items-center justify-center bg-zinc-800/80 hover:bg-zinc-700 rounded-lg transition text-white cursor-pointer">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"/></svg>
-        </button>
-        <button id="btn-heart" title="Favorite" class="w-10 h-10 flex items-center justify-center bg-zinc-800/80 hover:bg-zinc-700 rounded-lg transition text-white cursor-pointer">
-            <svg id="heart-icon" class="w-5 h-5 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
-        </button>
-        <button id="btn-fullscreen" title="Toggle Fullscreen" class="w-10 h-10 flex items-center justify-center bg-zinc-800/80 hover:bg-zinc-700 rounded-lg transition text-white cursor-pointer">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/></svg>
-        </button>
-        <button id="btn-maximize" title="Compact / Expand View" class="w-10 h-10 flex items-center justify-center bg-zinc-800/80 hover:bg-zinc-700 rounded-lg transition text-white cursor-pointer">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M15 15v4.5m0-4.5h4.5m0 4.5l-5.25-5.25"/></svg>
-        </button>
-        <button id="btn-themes" title="Customize Themes" class="w-10 h-10 flex items-center justify-center bg-zinc-800/80 hover:bg-zinc-700 rounded-lg transition text-white cursor-pointer">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
-        </button>
-        <button id="btn-settings" title="Clock Options" class="w-10 h-10 flex items-center justify-center bg-zinc-800/80 hover:bg-zinc-700 rounded-lg transition text-white cursor-pointer">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        </button>
-    </div>
-
-    <!-- Calendar Modal -->
-    <div id="calendar-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50">
-        <div class="bg-zinc-900 border border-zinc-700 p-6 rounded-2xl w-80 shadow-2xl flex flex-col gap-4 text-white">
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                <h3 id="cal-month-year" class="font-bold text-lg">Month Year</h3>
-                <button id="close-calendar-modal" class="text-zinc-400 hover:text-white font-bold text-xl cursor-pointer">&times;</button>
-            </div>
-            <div class="flex justify-between items-center my-1">
-                <button id="cal-prev" class="bg-zinc-800 hover:bg-zinc-700 px-3 py-1 rounded text-xs font-bold transition cursor-pointer">&larr; Prev</button>
-                <button id="cal-today" class="bg-zinc-800 hover:bg-zinc-700 px-3 py-1 rounded text-xs font-bold transition cursor-pointer">Today</button>
-                <button id="cal-next" class="bg-zinc-800 hover:bg-zinc-700 px-3 py-1 rounded text-xs font-bold transition cursor-pointer">Next &rarr;</button>
-            </div>
-            <div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-zinc-400 mb-1">
-                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-            </div>
-            <div id="cal-grid" class="grid grid-cols-7 gap-1 text-center text-sm">
-                <!-- Days injected via JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Notes Modal -->
-    <div id="notes-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50">
-        <div class="bg-zinc-900 border border-zinc-700 p-6 rounded-2xl w-80 shadow-2xl flex flex-col gap-4 text-white">
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                <h3 class="font-bold text-lg">Quick Notes</h3>
-                <button id="close-notes-modal" class="text-zinc-400 hover:text-white font-bold text-xl cursor-pointer">&times;</button>
-            </div>
-            <textarea id="quick-notes-area" placeholder="Write down notes or homework reminders here..." class="w-full h-40 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
-        </div>
-    </div>
-
-    <!-- Themes Modal -->
-    <div id="themes-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50">
-        <div class="bg-zinc-900 border border-zinc-700 p-6 rounded-2xl w-80 shadow-2xl flex flex-col gap-4 text-white max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                <h3 class="font-bold text-lg">Theme Customizer</h3>
-                <button id="close-themes-modal" class="text-zinc-400 hover:text-white font-bold text-xl cursor-pointer">&times;</button>
-            </div>
-            <div class="flex flex-col gap-4 text-sm">
-                <div>
-                    <label class="font-semibold text-zinc-400 block mb-2">Preset Themes</label>
-                    <div class="grid grid-cols-2 gap-2">
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#09090b" data-text="#ffffff">Clean Dark</button>
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#000000" data-text="#00ffcc">Matrix Green</button>
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#f4f4f5" data-text="#18181b">Light Mode</button>
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#0f172a" data-text="#38bdf8">Midnight Blue</button>
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#181825" data-text="#cba6f7">Purple Dream</button>
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#280d0f" data-text="#fca5a5">Sunset Red</button>
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#1c1917" data-text="#fde047">Solarized Gold</button>
-                        <button class="preset-btn bg-zinc-800 hover:bg-zinc-700 py-1.5 px-3 rounded text-xs border border-zinc-700 transition cursor-pointer" data-bg="#064e3b" data-text="#6ee7b7">Emerald Forest</button>
-                    </div>
-                </div>
-                <hr class="border-zinc-800">
-                <div class="flex flex-col gap-2">
-                    <label class="font-semibold text-zinc-400">Custom Colors</label>
-                    <div class="flex justify-between items-center">
-                        <span>Background Color:</span>
-                        <input type="color" id="picker-bg" value="#09090b" class="w-10 h-8 rounded bg-transparent cursor-pointer">
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span>Text Color:</span>
-                        <input type="color" id="picker-text" value="#ffffff" class="w-10 h-8 rounded bg-transparent cursor-pointer">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Clock Options Modal -->
-    <div id="settings-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50">
-        <div class="bg-zinc-900 border border-zinc-700 p-6 rounded-2xl w-80 shadow-2xl flex flex-col gap-4 text-white">
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-2">
-                <h3 class="font-bold text-lg">Clock Options</h3>
-                <button id="close-settings-modal" class="text-zinc-400 hover:text-white font-bold text-xl cursor-pointer">&times;</button>
-            </div>
-            <div class="flex flex-col gap-3 text-sm">
-                <div class="flex flex-col gap-1">
-                    <label class="font-semibold text-zinc-400">Time Zone</label>
-                    <select id="opt-timezone" class="bg-zinc-800 border border-zinc-700 rounded p-2 text-white cursor-pointer">
-                        <option value="America/Los_Angeles">Pacific Time (PT)</option>
-                        <option value="America/New_York">Eastern Time (ET)</option>
-                        <option value="UTC">UTC</option>
-                        <option value="local">Device Local Time</option>
-                    </select>
-                </div>
-                <label class="flex items-center gap-2 cursor-pointer mt-1"><input type="checkbox" id="opt-12hr" checked class="rounded bg-zinc-800 border-zinc-700"> 12-Hour Format</label>
-                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="opt-ampm" checked class="rounded bg-zinc-800 border-zinc-700"> Show AM/PM</label>
-                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="opt-seconds" checked class="rounded bg-zinc-800 border-zinc-700"> Show Seconds</label>
-                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="opt-date" checked class="rounded bg-zinc-800 border-zinc-700"> Show Date</label>
-                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="opt-week" checked class="rounded bg-zinc-800 border-zinc-700"> Show Week / Day</label>
-                <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="opt-tabseconds" class="rounded bg-zinc-800 border-zinc-700"> Tab Title Seconds</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification Container -->
-    <div id="toast-container" class="fixed bottom-5 right-5 flex flex-col gap-2 z-50"></div>
-
-    <script>
-        // Preset Configurations for Button Links (1 to 12 for all sections)
-        const LINK_PRESETS = {
-            decimalhero1: { url: "https://decimalhero.one/", label: "DecimalHero 1" },
-            decimalhero2: { url: "https://decimalhero.two/", label: "DecimalHero 2" },
-            decimalhero3: { url: "https://decimalhero.three/", label: "DecimalHero 3" },
-            decimalhero4: { url: "https://decimalhero.four/", label: "DecimalHero 4" },
-            decimalhero5: { url: "https://decimalhero.five/", label: "DecimalHero 5" },
-            decimalhero6: { url: "https://decimalhero.six/", label: "DecimalHero 6" },
-            decimalhero7: { url: "https://decimalhero.seven/", label: "DecimalHero 7" },
-            decimalhero8: { url: "https://decimalhero.eight/", label: "DecimalHero 8" },
-            decimalhero9: { url: "https://decimalhero.nine/", label: "DecimalHero 9" },
-            decimalhero10: { url: "https://decimalhero.ten/", label: "DecimalHero 10" },
-            decimalhero11: { url: "https://decimalhero.eleven/", label: "DecimalHero 11" },
-            decimalhero12: { url: "https://decimalhero.twelve/", label: "DecimalHero 12" },
-            
-            mathalley1: { url: "https://mathalley.one/", label: "Mathalley 1" },
-            mathalley2: { url: "https://mathalley.two/", label: "Mathalley 2" },
-            mathalley3: { url: "https://mathalley.three/", label: "Mathalley 3" },
-            mathalley4: { url: "https://mathalley.four/", label: "Mathalley 4" },
-            mathalley5: { url: "https://mathalley.five/", label: "Mathalley 5" },
-            mathalley6: { url: "https://mathalley.six/", label: "Mathalley 6" },
-            mathalley7: { url: "https://mathalley.seven/", label: "Mathalley 7" },
-            mathalley8: { url: "https://mathalley.eight/", label: "Mathalley 8" },
-            mathalley9: { url: "https://mathalley.nine/", label: "Mathalley 9" },
-            mathalley10: { url: "https://mathalley.ten/", label: "Mathalley 10" },
-            mathalley11: { url: "https://mathalley.eleven/", label: "Mathalley 11" },
-            mathalley12: { url: "https://mathalley.twelve/", label: "Mathalley 12" },
-
-            thatquiz1: { url: "https://thatquiz.one/", label: "ThatQuiz 1" },
-            thatquiz2: { url: "https://thatquiz.two/", label: "ThatQuiz 2" },
-            thatquiz3: { url: "https://thatquiz.three/", label: "ThatQuiz 3" },
-            thatquiz4: { url: "https://thatquiz.four/", label: "ThatQuiz 4" },
-            thatquiz5: { url: "https://thatquiz.five/", label: "ThatQuiz 5" },
-            thatquiz6: { url: "https://thatquiz.six/", label: "ThatQuiz 6" },
-            thatquiz7: { url: "https://thatquiz.seven/", label: "ThatQuiz 7" },
-            thatquiz8: { url: "https://thatquiz.eight/", label: "ThatQuiz 8" },
-            thatquiz9: { url: "https://thatquiz.nine/", label: "ThatQuiz 9" },
-            thatquiz10: { url: "https://thatquiz.ten/", label: "ThatQuiz 10" },
-            thatquiz11: { url: "https://thatquiz.eleven/", label: "ThatQuiz 11" },
-            thatquiz12: { url: "https://thatquiz.twelve/", label: "ThatQuiz 12" },
-
-            mathigon1: { url: "https://mathigon.one/", label: "Mathigon 1" },
-            mathigon2: { url: "https://mathigon.two/", label: "Mathigon 2" },
-            mathigon3: { url: "https://mathigon.three/", label: "Mathigon 3" },
-            mathigon4: { url: "https://mathigon.four/", label: "Mathigon 4" },
-            mathigon5: { url: "https://mathigon.five/", label: "Mathigon 5" },
-            mathigon6: { url: "https://mathigon.six/", label: "Mathigon 6" },
-            mathigon7: { url: "https://mathigon.seven/", label: "Mathigon 7" },
-            mathigon8: { url: "https://mathigon.eight/", label: "Mathigon 8" },
-            mathigon9: { url: "https://mathigon.nine/", label: "Mathigon 9" },
-            mathigon10: { url: "https://mathigon.ten/", label: "Mathigon 10" },
-            mathigon11: { url: "https://mathigon.eleven/", label: "Mathigon 11" },
-            mathigon12: { url: "https://mathigon.twelve/", label: "Mathigon 12" },
-
-            polypad1: { url: "https://polypad.one/", label: "Polypad 1" },
-            polypad2: { url: "https://polypad.two/", label: "Polypad 2" },
-            polypad3: { url: "https://polypad.three/", label: "Polypad 3" },
-            polypad4: { url: "https://polypad.four/", label: "Polypad 4" },
-            polypad5: { url: "https://polypad.five/", label: "Polypad 5" },
-            polypad6: { url: "https://polypad.six/", label: "Polypad 6" },
-            polypad7: { url: "https://polypad.seven/", label: "Polypad 7" },
-            polypad8: { url: "https://polypad.eight/", label: "Polypad 8" },
-            polypad9: { url: "https://polypad.nine/", label: "Polypad 9" },
-            polypad10: { url: "https://polypad.ten/", label: "Polypad 10" },
-            polypad11: { url: "https://polypad.eleven/", label: "Polypad 11" },
-            polypad12: { url: "https://polypad.twelve/", label: "Polypad 12" },
-
-            topmarks1: { url: "https://topmarks1.com/", label: "Topmarks 1" },
-            topmarks2: { url: "https://topmarks2.com/", label: "Topmarks 2" },
-            topmarks3: { url: "https://topmarks3.com/", label: "Topmarks 3" },
-            topmarks4: { url: "https://topmarks4.com/", label: "Topmarks 4" },
-            topmarks5: { url: "https://topmarks5.com/", label: "Topmarks 5" },
-            topmarks6: { url: "https://topmarks6.com/", label: "Topmarks 6" },
-            topmarks7: { url: "https://topmarks7.com/", label: "Topmarks 7" },
-            topmarks8: { url: "https://topmarks8.com/", label: "Topmarks 8" },
-            topmarks9: { url: "https://topmarks9.com/", label: "Topmarks 9" },
-            topmarks10: { url: "https://topmarks10.com/", label: "Topmarks 10" },
-            topmarks11: { url: "https://topmarks11.com/", label: "Topmarks 11" },
-            topmarks12: { url: "https://topmarks12.com/", label: "Topmarks 12" },
-
-            wyzant1: { url: "https://wyzant1.com/", label: "Wyzant 1" },
-            wyzant2: { url: "https://wyzant2.com/", label: "Wyzant 2" },
-            wyzant3: { url: "https://wyzant3.com/", label: "Wyzant 3" },
-            wyzant4: { url: "https://wyzant4.com/", label: "Wyzant 4" },
-            wyzant5: { url: "https://wyzant5.com/", label: "Wyzant 5" },
-            wyzant6: { url: "https://wyzant6.com/", label: "Wyzant 6" },
-            wyzant7: { url: "https://wyzant7.com/", label: "Wyzant 7" },
-            wyzant8: { url: "https://wyzant8.com/", label: "Wyzant 8" },
-            wyzant9: { url: "https://wyzant9.com/", label: "Wyzant 9" },
-            wyzant10: { url: "https://wyzant10.com/", label: "Wyzant 10" },
-            wyzant11: { url: "https://wyzant11.com/", label: "Wyzant 11" },
-            wyzant12: { url: "https://wyzant12.com/", label: "Wyzant 12" }
-        };
-
-        // Escape key fast triple press panic redirect listener
-        let escapePressCount = 0;
-        let escapeTimer = null;
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                escapePressCount++;
-                if (escapePressCount === 1) {
-                    escapeTimer = setTimeout(() => {
-                        escapePressCount = 0;
-                    }, 800);
-                } else if (escapePressCount === 3) {
-                    clearTimeout(escapeTimer);
-                    window.location.replace("https://launchpad.classlink.com/login");
-                }
-            }
-        });
-
-        function showToast(title, description) {
-            const container = document.getElementById('toast-container');
-            if (!container) return;
-            const toast = document.createElement('div');
-            toast.className = "bg-white text-black px-4 py-3 rounded-md shadow-lg border border-gray-200 transition-all duration-300 transform translate-y-2 opacity-0 flex flex-col";
-            toast.innerHTML = `<span class="font-bold text-sm">${title}</span><span class="text-xs text-gray-600">${description}</span>`;
-            container.appendChild(toast);
-            setTimeout(() => toast.classList.remove('translate-y-2', 'opacity-0'), 10);
-            setTimeout(() => {
-                toast.classList.add('translate-y-2', 'opacity-0');
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
-        }
-
-        function runClock() {
-            const timeMainEl = document.getElementById('time-main');
-            const timeAmpmEl = document.getElementById('am-pm-trigger');
-            const timeSecondsEl = document.getElementById('time-seconds');
-            const dateDisplayEl = document.getElementById('date-display');
-            
-            const opt12hr = document.getElementById('opt-12hr');
-            const optAmpm = document.getElementById('opt-ampm');
-            const optSeconds = document.getElementById('opt-seconds');
-            const optTabSeconds = document.getElementById('opt-tabseconds');
-            const optTimezone = document.getElementById('opt-timezone');
-
-            function update() {
-                const now = new Date();
-                const tz = optTimezone ? optTimezone.value : 'America/Los_Angeles';
-
-                let targetDate = now;
-                if (tz !== 'local') {
-                    try {
-                        const tzString = now.toLocaleString('en-US', { timeZone: tz });
-                        targetDate = new Date(tzString);
-                    } catch(e) {
-                        targetDate = now;
-                    }
-                }
-
-                let h = targetDate.getHours();
-                let m = targetDate.getMinutes();
-                let s = targetDate.getSeconds();
-                let period = "";
-
-                const use12 = opt12hr ? opt12hr.checked : true;
-
-                if (use12) {
-                    period = h >= 12 ? 'PM' : 'AM';
-                    h = h % 12;
-                    h = h ? h : 12;
-                }
-
-                const hh = String(h).padStart(2, '0');
-                const mm = String(m).padStart(2, '0');
-                const ss = String(s).padStart(2, '0');
-
-                if (timeMainEl) timeMainEl.textContent = `${hh}:${mm}`;
-                if (timeAmpmEl) {
-                    timeAmpmEl.style.display = (use12 && optAmpm && optAmpm.checked) ? 'inline-block' : 'none';
-                    timeAmpmEl.textContent = period;
-                }
-                if (timeSecondsEl) {
-                    timeSecondsEl.style.display = (optSeconds && optSeconds.checked) ? 'block' : 'none';
-                    timeSecondsEl.textContent = ss;
-                }
-
-                if (dateDisplayEl) {
-                    try {
-                        const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-                        dateDisplayEl.textContent = targetDate.toLocaleDateString('en-US', options);
-                    } catch(err) {
-                        dateDisplayEl.textContent = targetDate.toDateString();
-                    }
-                }
-
-                if (optTabSeconds && optTabSeconds.checked) {
-                    document.title = `${hh}:${mm}:${ss} - Home - TeachTCI`;
-                } else {
-                    document.title = "Home - TeachTCI";
-                }
-            }
-
-            update();
-            setInterval(update, 1000);
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', runClock);
-        } else {
-            runClock();
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            // Drag and Drop Reordering with Title Placeholder
-            const sectionsContainer = document.getElementById('sections-container');
-            let draggedSection = null;
-            let placeholder = null;
-
-            // Load saved section order from localStorage
-            function loadSectionOrder() {
-                const savedOrder = JSON.parse(localStorage.getItem('dashboard_section_order'));
-                if (savedOrder && Array.isArray(savedOrder) && sectionsContainer) {
-                    savedOrder.forEach(id => {
-                        const section = sectionsContainer.querySelector(`[data-section-id="${id}"]`);
-                        if (section) {
-                            sectionsContainer.appendChild(section);
-                        }
-                    });
-                }
-            }
-            loadSectionOrder();
-
-            function saveSectionOrder() {
-                if (!sectionsContainer) return;
-                const order = Array.from(sectionsContainer.querySelectorAll('.draggable-section')).map(el => el.getAttribute('data-section-id'));
-                localStorage.setItem('dashboard_section_order', JSON.stringify(order));
-            }
-
-            if (sectionsContainer) {
-                sectionsContainer.querySelectorAll('.draggable-section').forEach(section => {
-                    section.addEventListener('dragstart', (e) => {
-                        // Prevent dragging if interacting directly with a button inside
-                        if (e.target.closest('button')) {
-                            e.preventDefault();
-                            return;
-                        }
-
-                        draggedSection = section;
-                        const title = section.getAttribute('data-section-title') || 'Section';
-                        const rect = section.getBoundingClientRect();
-
-                        // Create blank outlined placeholder displaying the section's title
-                        placeholder = document.createElement('div');
-                        placeholder.className = 'drop-placeholder';
-                        placeholder.style.height = `${rect.height}px`;
-                        placeholder.textContent = title;
-
-                        e.dataTransfer.effectAllowed = 'move';
-                        e.dataTransfer.setData('text/plain', section.getAttribute('data-section-id'));
-
-                        // Swap section with placeholder visually on next frame
-                        setTimeout(() => {
-                            section.classList.add('dragging');
-                            sectionsContainer.insertBefore(placeholder, section);
-                            section.style.display = 'none';
-                        }, 0);
-                    });
-
-                    section.addEventListener('dragend', () => {
-                        if (draggedSection) {
-                            draggedSection.style.display = '';
-                            draggedSection.classList.remove('dragging');
-                            if (placeholder && placeholder.parentNode === sectionsContainer) {
-                                sectionsContainer.insertBefore(draggedSection, placeholder);
-                                placeholder.remove();
-                            }
-                            saveSectionOrder();
-                            draggedSection = null;
-                            placeholder = null;
-                        }
-                    });
-                });
-
-                sectionsContainer.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    if (!draggedSection || !placeholder) return;
-
-                    const afterElement = getDragAfterElement(sectionsContainer, e.clientY);
-                    if (afterElement == null) {
-                        sectionsContainer.appendChild(placeholder);
-                    } else {
-                        sectionsContainer.insertBefore(placeholder, afterElement);
-                    }
-                });
-
-                sectionsContainer.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    if (draggedSection && placeholder && placeholder.parentNode === sectionsContainer) {
-                        draggedSection.style.display = '';
-                        draggedSection.classList.remove('dragging');
-                        sectionsContainer.insertBefore(draggedSection, placeholder);
-                        placeholder.remove();
-                        saveSectionOrder();
-                        draggedSection = null;
-                        placeholder = null;
-                    }
-                });
-            }
-
-            function getDragAfterElement(container, y) {
-                const draggableElements = [...container.querySelectorAll('.draggable-section:not(.dragging)')];
-
-                return draggableElements.reduce((closest, child) => {
-                    const box = child.getBoundingClientRect();
-                    const offset = y - box.top - box.height / 2;
-                    if (offset < 0 && offset > closest.offset) {
-                        return { offset: offset, element: child };
-                    } else {
-                        return closest;
-                    }
-                }, { offset: Number.NEGATIVE_INFINITY }).element;
-            }
-
-            // Section Collapse / Expand Logic
-            document.querySelectorAll('.section-toggle').forEach(header => {
-                header.addEventListener('click', (e) => {
-                    // Do not toggle collapse if clicking the drag handle
-                    if (e.target.closest('.drag-handle')) return;
-
-                    const targetId = header.getAttribute('data-target');
-                    const content = document.getElementById(targetId);
-                    const icon = header.querySelector('.toggle-chevron');
-                    if (content.classList.contains('hidden')) {
-                        content.classList.remove('hidden');
-                        if (icon) icon.style.transform = 'rotate(0deg)';
-                    } else {
-                        content.classList.add('hidden');
-                        if (icon) icon.style.transform = 'rotate(-90deg)';
-                    }
-                });
-            });
-
-            // Interactive Calendar Modal Logic
-            let calYear = new Date().getFullYear();
-            let calMonth = new Date().getMonth();
-
-            const calendarModal = document.getElementById('calendar-modal');
-            const dateDisplayEl = document.getElementById('date-display');
-            const closeCalendar = document.getElementById('close-calendar-modal');
-            const calMonthYear = document.getElementById('cal-month-year');
-            const calGrid = document.getElementById('cal-grid');
-            const calPrev = document.getElementById('cal-prev');
-            const calNext = document.getElementById('cal-next');
-            const calToday = document.getElementById('cal-today');
-
-            function renderCalendar(year, month) {
-                const firstDay = new Date(year, month, 1).getDay();
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                const today = new Date();
-
-                const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                calMonthYear.textContent = `${monthNames[month]} ${year}`;
-
-                calGrid.innerHTML = "";
-
-                for (let i = 0; i < firstDay; i++) {
-                    const emptyCell = document.createElement('div');
-                    calGrid.appendChild(emptyCell);
-                }
-
-                for (let day = 1; day <= daysInMonth; day++) {
-                    const dayCell = document.createElement('div');
-                    dayCell.textContent = day;
-                    dayCell.className = "py-1.5 rounded-lg text-sm transition font-medium flex items-center justify-center";
-
-                    const isToday = (day === today.getDate() && month === today.getMonth() && year === today.getFullYear());
-                    if (isToday) {
-                        dayCell.classList.add('bg-blue-600', 'text-white', 'font-bold');
-                    } else {
-                        dayCell.classList.add('hover:bg-zinc-800', 'cursor-pointer');
-                    }
-                    calGrid.appendChild(dayCell);
-                }
-            }
-
-            if (dateDisplayEl && calendarModal) {
-                dateDisplayEl.addEventListener('click', () => {
-                    const now = new Date();
-                    calYear = now.getFullYear();
-                    calMonth = now.getMonth();
-                    renderCalendar(calYear, calMonth);
-                    calendarModal.classList.replace('hidden', 'flex');
-                });
-            }
-
-            if (closeCalendar && calendarModal) {
-                closeCalendar.addEventListener('click', () => {
-                    calendarModal.classList.replace('flex', 'hidden');
-                });
-            }
-
-            if (calPrev) {
-                calPrev.addEventListener('click', () => {
-                    calMonth--;
-                    if (calMonth < 0) {
-                        calMonth = 11;
-                        calYear--;
-                    }
-                    renderCalendar(calYear, calMonth);
-                });
-            }
-
-            if (calNext) {
-                calNext.addEventListener('click', () => {
-                    calMonth++;
-                    if (calMonth > 11) {
-                        calMonth = 0;
-                        calYear++;
-                    }
-                    renderCalendar(calYear, calMonth);
-                });
-            }
-
-            if (calToday) {
-                calToday.addEventListener('click', () => {
-                    const now = new Date();
-                    calYear = now.getFullYear();
-                    calMonth = now.getMonth();
-                    renderCalendar(calYear, calMonth);
-                });
-            }
-
-            // Upgraded "Aa" Font & Color Feature Logic
-            const fonts = [
-                { name: 'Lexend', val: "'Lexend', sans-serif" },
-                { name: 'Standard Sans', val: "ui-sans-serif, system-ui, sans-serif" },
-                { name: 'Monospace', val: "monospace" },
-                { name: 'Serif', val: "Georgia, serif" }
-            ];
-            const textColors = [
-                { name: 'White', val: '#ffffff' },
-                { name: 'Neon Green', val: '#00ffcc' },
-                { name: 'Sky Blue', val: '#38bdf8' },
-                { name: 'Soft Purple', val: '#cba6f7' },
-                { name: 'Sunset Yellow', val: '#fde047' }
-            ];
-
-            let fontIndex = 0;
-            let textColorIndex = 0;
-            const btnFont = document.getElementById('btn-font');
-            if (btnFont) {
-                btnFont.addEventListener('click', () => {
-                    fontIndex = (fontIndex + 1) % fonts.length;
-                    textColorIndex = (textColorIndex + 1) % textColors.length;
-
-                    const selectedFont = fonts[fontIndex];
-                    const selectedColor = textColors[textColorIndex];
-
-                    document.documentElement.style.setProperty('--custom-font', selectedFont.val);
-                    document.documentElement.style.setProperty('--custom-text', selectedColor.val);
-
-                    showToast("Customized Style", `Font: ${selectedFont.name} | Color: ${selectedColor.name}`);
-                });
-            }
-
-            // Stopwatch Logic
-            let swInterval = null;
-            let swSeconds = 0;
-            let swRunning = false;
-
-            const clockView = document.getElementById('clock-view');
-            const stopwatchView = document.getElementById('stopwatch-view');
-            const swMain = document.getElementById('sw-main');
-            const swMs = document.getElementById('sw-ms');
-            const swStart = document.getElementById('sw-start');
-            const swReset = document.getElementById('sw-reset');
-
-            const toggleSwBtn = document.getElementById('toggle-stopwatch-mode');
-            const toggleClockBtn = document.getElementById('toggle-clock-mode');
-
-            if (toggleSwBtn) {
-                toggleSwBtn.addEventListener('click', () => {
-                    clockView.classList.add('hidden');
-                    stopwatchView.classList.remove('hidden');
-                    stopwatchView.classList.add('flex');
-                });
-            }
-
-            if (toggleClockBtn) {
-                toggleClockBtn.addEventListener('click', () => {
-                    stopwatchView.classList.remove('flex');
-                    stopwatchView.classList.add('hidden');
-                    clockView.classList.remove('hidden');
-                });
-            }
-
-            if (swStart) {
-                swStart.addEventListener('click', () => {
-                    if (!swRunning) {
-                        swRunning = true;
-                        swStart.textContent = "Pause";
-                        swStart.classList.replace('bg-blue-600', 'bg-amber-600');
-                        swStart.classList.replace('hover:bg-blue-500', 'hover:bg-amber-500');
-                        const startTime = Date.now() - (swSeconds * 1000);
-                        swInterval = setInterval(() => {
-                            const elapsed = Date.now() - startTime;
-                            swSeconds = elapsed / 1000;
-                            const mins = Math.floor(swSeconds / 60);
-                            const secs = Math.floor(swSeconds % 60);
-                            const millis = Math.floor((swSeconds % 1) * 100);
-                            if (swMain) swMain.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-                            if (swMs) swMs.textContent = `.${String(millis).padStart(2, '0')}`;
-                        }, 50);
-                    } else {
-                        swRunning = false;
-                        swStart.textContent = "Start";
-                        swStart.classList.replace('bg-amber-600', 'bg-blue-600');
-                        swStart.classList.replace('hover:bg-amber-500', 'hover:bg-blue-500');
-                        clearInterval(swInterval);
-                    }
-                });
-            }
-
-            if (swReset) {
-                swReset.addEventListener('click', () => {
-                    swRunning = false;
-                    clearInterval(swInterval);
-                    swSeconds = 0;
-                    if (swMain) swMain.textContent = "00:00";
-                    if (swMs) swMs.textContent = ".00";
-                    if (swStart) {
-                        swStart.textContent = "Start";
-                        swStart.classList.replace('bg-amber-600', 'bg-blue-600');
-                    }
-                });
-            }
-
-            // Quick Notes Auto-save Logic
-            const notesModal = document.getElementById('notes-modal');
-            const quickNotesArea = document.getElementById('quick-notes-area');
-            
-            if (quickNotesArea && localStorage.getItem('dashboard_quick_notes')) {
-                quickNotesArea.value = localStorage.getItem('dashboard_quick_notes');
-            }
-            if (quickNotesArea) {
-                quickNotesArea.addEventListener('input', () => {
-                    localStorage.setItem('dashboard_quick_notes', quickNotesArea.value);
-                });
-            }
-
-            const btnNotes = document.getElementById('btn-notes');
-            const closeNotes = document.getElementById('close-notes-modal');
-            if (btnNotes && notesModal) {
-                btnNotes.addEventListener('click', () => notesModal.classList.replace('hidden', 'flex'));
-            }
-            if (closeNotes && notesModal) {
-                closeNotes.addEventListener('click', () => notesModal.classList.replace('flex', 'hidden'));
-            }
-
-            const timeAmpmEl = document.getElementById('am-pm-trigger');
-            if (timeAmpmEl) {
-                timeAmpmEl.addEventListener('click', () => {
-                    clockView.classList.add('hidden');
-                    stopwatchView.classList.remove('flex');
-                    stopwatchView.classList.add('hidden');
-                    document.getElementById('embedder-view').classList.remove('hidden');
-                });
-            }
-
-            const backToClockBtn = document.getElementById('back-to-clock');
-            if (backToClockBtn) {
-                backToClockBtn.addEventListener('click', () => {
-                    document.getElementById('embedder-view').classList.add('hidden');
-                    clockView.classList.remove('hidden');
-                });
-            }
-
-            let isHeartRed = false;
-            const btnHeart = document.getElementById('btn-heart');
-            if (btnHeart) {
-                btnHeart.addEventListener('click', () => {
-                    isHeartRed = !isHeartRed;
-                    const icon = document.getElementById('heart-icon');
-                    if (isHeartRed) {
-                        icon.setAttribute('fill', 'currentColor');
-                        icon.classList.add('text-red-500');
-                        showToast("Favorited", "Added to favorites!");
-                    } else {
-                        icon.setAttribute('fill', 'none');
-                        icon.classList.remove('text-red-500');
-                        showToast("Removed", "Removed from favorites.");
-                    }
-                });
-            }
-
-            const btnFullscreen = document.getElementById('btn-fullscreen');
-            if (btnFullscreen) {
-                btnFullscreen.addEventListener('click', () => {
-                    if (!document.fullscreenElement) {
-                        document.documentElement.requestFullscreen().catch(err => alert(err.message));
-                    } else {
-                        if (document.exitFullscreen) document.exitFullscreen();
-                    }
-                });
-            }
-
-            let isCompact = false;
-            const btnMaximize = document.getElementById('btn-maximize');
-            const timeMainEl = document.getElementById('time-main');
-            if (btnMaximize && timeMainEl) {
-                btnMaximize.addEventListener('click', () => {
-                    isCompact = !isCompact;
-                    if (isCompact) {
-                        timeMainEl.classList.replace('text-7xl', 'text-4xl');
-                        timeMainEl.classList.replace('md:text-9xl', 'md:text-6xl');
-                        showToast("Minimized", "Compact view enabled.");
-                    } else {
-                        timeMainEl.classList.replace('text-4xl', 'text-7xl');
-                        timeMainEl.classList.replace('md:text-6xl', 'md:text-9xl');
-                        showToast("Maximize", "Normal view restored.");
-                    }
-                });
-            }
-
-            const themesModal = document.getElementById('themes-modal');
-            const settingsModal = document.getElementById('settings-modal');
-
-            const btnThemes = document.getElementById('btn-themes');
-            if (btnThemes && themesModal) {
-                btnThemes.addEventListener('click', () => themesModal.classList.replace('hidden', 'flex'));
-            }
-            const closeThemes = document.getElementById('close-themes-modal');
-            if (closeThemes && themesModal) {
-                closeThemes.addEventListener('click', () => themesModal.classList.replace('flex', 'hidden'));
-            }
-
-            const btnSettings = document.getElementById('btn-settings');
-            if (btnSettings && settingsModal) {
-                btnSettings.addEventListener('click', () => settingsModal.classList.replace('hidden', 'flex'));
-            }
-            const closeSettings = document.getElementById('close-settings-modal');
-            if (closeSettings && settingsModal) {
-                closeSettings.addEventListener('click', () => settingsModal.classList.replace('flex', 'hidden'));
-            }
-
-            const pickerBg = document.getElementById('picker-bg');
-            const pickerText = document.getElementById('picker-text');
-
-            function applyTheme(bg, text) {
-                document.documentElement.style.setProperty('--custom-bg', bg);
-                document.documentElement.style.setProperty('--custom-text', text);
-                if (pickerBg) pickerBg.value = bg;
-                if (pickerText) pickerText.value = text;
-            }
-
-            if (pickerBg) pickerBg.addEventListener('input', (e) => document.documentElement.style.setProperty('--custom-bg', e.target.value));
-            if (pickerText) pickerText.addEventListener('input', (e) => document.documentElement.style.setProperty('--custom-text', e.target.value));
-
-            document.querySelectorAll('.preset-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    applyTheme(btn.getAttribute('data-bg'), btn.getAttribute('data-text'));
-                });
-            });
-
-            function triggerEmbedder() {
-                let urlInput = document.getElementById("url-target");
-                if (!urlInput) return;
-                
-                let url = urlInput.dataset.actualUrl || urlInput.value.trim();
-                if (!url) { showToast("Error", "URL cannot be empty."); return; }
-                showToast("Page opened!", "The page has been opened in a new about:blank tab.");
-                if (!url.startsWith("http://") && !url.startsWith("https://")) url = "https://" + url;
-                
-                const win = window.open('about:blank');
-                if (win) {
-                    win.document.body.style.margin = "0";
-                    win.document.body.style.height = "100vh";
-                    let frm = win.document.createElement("iframe");
-                    frm.style.border = "none"; frm.style.width = "100%"; frm.style.height = "100%";
-                    frm.referrerPolicy = "no-referrer"; frm.allow = "fullscreen"; frm.src = url;
-                    win.document.body.appendChild(frm);
-                }
-            }
-
-            const createBtn = document.getElementById('create-btn');
-            if (createBtn) {
-                createBtn.addEventListener('click', () => {
-                    triggerEmbedder();
-                });
-            }
-
-            // Fast typing animation function
-            let activeTypeTimer = null;
-            function typeWriter(inputElement, text, speed = 12, callback) {
-                if (activeTypeTimer) clearTimeout(activeTypeTimer);
-                inputElement.value = "";
-                let i = 0;
-                function typing() {
-                    if (i < text.length) {
-                        inputElement.value += text.charAt(i);
-                        i++;
-                        activeTypeTimer = setTimeout(typing, speed);
-                    } else {
-                        activeTypeTimer = null;
-                        if (callback) callback();
-                    }
-                }
-                typing();
-            }
-
-            // Button Click Handlers for all sections (types out the actual URL)
-            document.querySelectorAll('.dh-btn, .ma-btn, .tq-btn, .mg-btn, .pp-btn, .tm-btn, .wz-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const key = btn.getAttribute('data-key');
-                    const urlInput = document.getElementById("url-target");
-                    const preset = LINK_PRESETS[key];
-                    if (urlInput && preset) {
-                        urlInput.dataset.actualUrl = preset.url;
-                        typeWriter(urlInput, preset.url, 12, () => {
-                            showToast("Session Loaded", "Link ready and secured.");
-                        });
-                    }
-                });
-            });
-
-            const urlTarget = document.getElementById('url-target');
-            if (urlTarget) {
-                urlTarget.addEventListener('input', () => {
-                    delete urlTarget.dataset.actualUrl;
-                });
-                urlTarget.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        triggerEmbedder();
-                    }
-                });
-            }
-
-            const clearBtn = document.getElementById('clear-btn');
-            if (clearBtn) {
-                clearBtn.addEventListener('click', () => {
-                    if (activeTypeTimer) clearTimeout(activeTypeTimer);
-                    const input = document.getElementById("url-target");
-                    if (!input || !input.value) { showToast("Error", "Input is already empty."); return; }
-                    input.value = "";
-                    delete input.dataset.actualUrl;
-                    showToast("Input cleared", "The input has been cleared.");
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+                        <!-- Smartwork Section -->
+                        <div draggable="true" data-section-id="smartwork" data-section-title="Smartwork" class="draggable-section flex flex-col items-center w-full border border-amber-500/60 rounded-xl p-3 bg-amber-950/10">
+                            <div class="flex justify-between items-center w-full cursor-pointer section-toggle" data-target="smartwork-content">
+                                <div class="flex items-center gap-2">
+                                    <span class="drag-handle cursor-grab active:cursor-grabbing text-amber-400/60 hover:text-amber-400" title="Drag to reorder">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 2zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 14zm6-8a2 2 0 1 0-.001-4.001A2 2 0 0 0 13 6zm0 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 14z"/></svg>
+                                    </span>
+                                    <h2 class="text-sm font-bold tracking-wider uppercase text-amber-400">Smartwork</h2>
+                                </div>
+                                <svg class="toggle-chevron w-4 h-4 text-amber-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                            <div id="smartwork-content" class="w-full flex flex-col transition-all duration-200">
+                                <hr class="w-full border-amber-500/30 my-2" />
+                                <div id="smartwork-buttons-container" class="flex flex-wrap justify-center gap-2 w-full">
+                                    <button data-key="smartwork1" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 1</span></button>
+                                    <button data-key="smartwork2" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 2</span></button>
+                                    <button data-key="smartwork3" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 3</span></button>
+                                    <button data-key="smartwork4" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 4</span></button>
+                                    <button data-key="smartwork5" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 5</span></button>
+                                    <button data-key="smartwork6" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 6</span></button>
+                                    <button data-key="smartwork7" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 7</span></button>
+                                    <button data-key="smartwork8" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 8</span></button>
+                                    <button data-key="smartwork9" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 9</span></button>
+                                    <button data-key="smartwork10" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 10</span></button>
+                                    <button data-key="smartwork11" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 11</span></button>
+                                    <button data-key="smartwork12" class="sw-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-amber-600 text-white hover:bg-amber-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><svg class="w-3.5 h-3.5 text-amber-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg><span>Smartwork 12</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Edfinity Section -->
+                        <div draggable="true" data-section-id="edfinity" data-section-title="Edfinity" class="draggable-section flex flex-col items-center w-full border border-rose-500/60 rounded-xl p-3 bg-rose-950/10">
+                            <div class="flex justify-between items-center w-full cursor-pointer section-toggle" data-target="edfinity-content">
+                                <div class="flex items-center gap-2">
+                                    <span class="drag-handle cursor-grab active:cursor-grabbing text-rose-400/60 hover:text-rose-400" title="Drag to reorder">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 2zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 14zm6-8a2 2 0 1 0-.001-4.001A2 2 0 0 0 13 6zm0 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 14z"/></svg>
+                                    </span>
+                                    <h2 class="text-sm font-bold tracking-wider uppercase text-rose-400">Edfinity</h2>
+                                </div>
+                                <svg class="toggle-chevron w-4 h-4 text-rose-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                            <div id="edfinity-content" class="w-full flex flex-col transition-all duration-200">
+                                <hr class="w-full border-rose-500/30 my-2" />
+                                <div id="edfinity-buttons-container" class="flex flex-wrap justify-center gap-2 w-full">
+                                    <button data-key="edfinity1" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 1</span></button>
+                                    <button data-key="edfinity2" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 2</span></button>
+                                    <button data-key="edfinity3" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 3</span></button>
+                                    <button data-key="edfinity4" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 4</span></button>
+                                    <button data-key="edfinity5" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 5</span></button>
+                                    <button data-key="edfinity6" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 6</span></button>
+                                    <button data-key="edfinity7" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 7</span></button>
+                                    <button data-key="edfinity8" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 8</span></button>
+                                    <button data-key="edfinity9" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 9</span></button>
+                                    <button data-key="edfinity10" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 10</span></button>
+                                    <button data-key="edfinity11" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 11</span></button>
+                                    <button data-key="edfinity12" class="ef-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-rose-600 text-white hover:bg-rose-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(244,63,94,0.3)]"><svg class="w-3.5 h-3.5 text-rose-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg><span>Edfinity 12</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DeckToys Section -->
+                        <div draggable="true" data-section-id="decktoys" data-section-title="DeckToys" class="draggable-section flex flex-col items-center w-full border border-cyan-500/60 rounded-xl p-3 bg-cyan-950/10">
+                            <div class="flex justify-between items-center w-full cursor-pointer section-toggle" data-target="decktoys-content">
+                                <div class="flex items-center gap-2">
+                                    <span class="drag-handle cursor-grab active:cursor-grabbing text-cyan-400/60 hover:text-cyan-400" title="Drag to reorder">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 2zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 14zm6-8a2 2 0 1 0-.001-4.001A2 2 0 0 0 13 6zm0 2a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 8zm0 6a2 2 0 1 0 .001 4.001A2 2 0 0 0 13 14z"/></svg>
+                                    </span>
+                                    <h2 class="text-sm font-bold tracking-wider uppercase text-cyan-400">DeckToys</h2>
+                                </div>
+                                <svg class="toggle-chevron w-4 h-4 text-cyan-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            </div>
+                            <div id="decktoys-content" class="w-full flex flex-col transition-all duration-200">
+                                <hr class="w-full border-cyan-500/30 my-2" />
+                                <div id="decktoys-buttons-container" class="flex flex-wrap justify-center gap-2 w-full">
+                                    <button data-key="decktoys1" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 1</span></button>
+                                    <button data-key="decktoys2" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 2</span></button>
+                                    <button data-key="decktoys3" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 3</span></button>
+                                    <button data-key="decktoys4" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 4</span></button>
+                                    <button data-key="decktoys5" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 5</span></button>
+                                    <button data-key="decktoys6" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 6</span></button>
+                                    <button data-key="decktoys7" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 7</span></button>
+                                    <button data-key="decktoys8" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 8</span></button>
+                                    <button data-key="decktoys9" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 9</span></button>
+                                    <button data-key="decktoys10" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 10</span></button>
+                                    <button data-key="decktoys11" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 h-8 px-2 transition cursor-pointer gap-1 shadow-[0_0_10px_rgba(6,182,212,0.3)]"><svg class="w-3.5 h-3.5 text-cyan-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg><span>DeckToys 11</span></button>
+                                    <button data-key="decktoys12" class="dt-btn inline-flex items-center justify-center rounded-xl text-xs font-medium bg-cyan-60
